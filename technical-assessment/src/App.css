@@ -1,7 +1,11 @@
+/* Global styles */
+
 #root {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2rem;
+	--bg-color: #f4f6f8;
+	--bg-color-card: #fff;
 }
 
 html {
@@ -15,30 +19,44 @@ html {
 }
 
 body {
-	background-color: aliceblue;
+	font-family: 'Roboto', sans-serif;
+	background-color: var(--bg-color);
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-}
-
-.add-button {
-	background-image: url('./assets/plus.svg') no-repeat center cover;
-	border: 0px solid;
-	border-radius: 30%;
-	padding: 5px;
-	cursor: pointer;
+	height: 100vh;
 }
 
 .card-container {
-	width: 200px;
-	height: 200px;
-	border: 1px solid #000;
-	border-radius: 2%;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+	width: 350px;
+	min-height: 200px;
+	height: auto;
+	border: 1px solid var(--bg-color-card);
+	border-radius: 5%;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	background-color: #fff;
+	background-color: var(--bg-color-card);
 }
 
-.upvote-list {
-	border: 0px;
+.votes-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	margin: 5px;
+}
+
+.votes-list {
+	display: flex;
+	border: 1px solid #e0e0e0;
+	gap: 1px;
+	width: 200px;
+	height: auto;
+	border-radius: 7px;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 5px;
+	flex-grow: 1;
 }

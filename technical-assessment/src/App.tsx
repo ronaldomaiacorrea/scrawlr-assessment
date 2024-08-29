@@ -1,14 +1,16 @@
 import './App.css';
-import UpvotesList from './components/UpvotesList';
+import Votes from './components/Votes';
 import ContextProvider from './context/ContextProvider';
 
 function App() {
 	return (
-		<>
+		<div className="card-container">
 			<ContextProvider>
-				<UpvotesList />
+				<Votes rowNumber={0} />
+				<Votes rowNumber={1} />
+				<Votes rowNumber={2} />
 			</ContextProvider>
-		</>
+		</div>
 	);
 }
 
