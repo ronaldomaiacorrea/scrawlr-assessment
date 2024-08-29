@@ -6,9 +6,9 @@ function App() {
 	return (
 		<div className="card-container">
 			<ContextProvider>
-				<Votes rowNumber={0} />
-				<Votes rowNumber={1} />
-				<Votes rowNumber={2} />
+				<Votes />
+				<Votes />
+				<Votes />
 			</ContextProvider>
 		</div>
 	);

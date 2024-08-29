@@ -1,16 +1,20 @@
 import React from 'react';
+import UpArrow from '../common/upArrow/UpArrow';
+import type { Arrow } from '../utils/types';
 
 interface VotesListProps {
-	votesList: React.ReactNode[];
+	votesList: Arrow[];
+	onSelect: () => void;
 }
 
-const VotesList: React.FC<VotesListProps> = ({ votesList }) => {
+const VotesList: React.FC<VotesListProps> = ({
+	votesList,
+	onSelect,
+}: VotesListProps) => {
 	return (
 		<div className="votes-list">
-			{votesList.map((vote, index) => (
-				<div key={index} className="">
-					{vote}
-				</div>
+			{votesList.map((vote) => (
+				<UpArrow selected={vote.selected} onSelect={onSelect} key={vote.id} />
 			))}
 		</div>
 	);

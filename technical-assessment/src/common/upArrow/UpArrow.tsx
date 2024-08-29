@@ -1,13 +1,14 @@
-import { useState } from 'react';
-// import arrowSvg from '@assets/arrow-up.svg';
 import './upArrow.css';
 
-const UpArrow = () => {
-	const [selected, setSelected] = useState(false);
+interface UpArrowProps {
+	selected: boolean;
+	onSelect: () => void;
+}
 
+const UpArrow = ({ selected, onSelect }: UpArrowProps) => {
 	return (
 		<svg
-			onClick={() => setSelected((previous) => !previous)}
+			onClick={onSelect}
 			width="30"
 			height="30"
 			viewBox="0 0 24 24"
