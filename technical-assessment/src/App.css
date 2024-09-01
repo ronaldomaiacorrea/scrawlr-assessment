@@ -1,5 +1,4 @@
-/* Global styles */
-
+/* Global */
 #root {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -28,26 +27,28 @@ body {
 	height: 100vh;
 }
 
+/* Main card container  */
 .card-container {
 	display: flex;
 	justify-content: space-evenly;
 	flex-direction: column;
 	width: 350px;
-	min-height: 200px;
 	height: auto;
 	border: 1px solid var(--bg-color-card);
-	border-radius: 5%;
+	border-radius: 5px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	background-color: var(--bg-color-card);
 }
 
-.votes-container {
+/* Row of votes plus button container*/
+.row-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: start;
 	margin: 5px;
 }
 
+/* Votes list container */
 .votes-list {
 	display: flex;
 	border: 1px solid #e0e0e0;
