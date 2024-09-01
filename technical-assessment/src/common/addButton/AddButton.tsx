@@ -8,6 +8,7 @@ const AddButton = ({ addItem }: AddButtonProps) => {
 	return (
 		<svg
 			className="add-button"
+			role="button"
 			width="35"
 			height="35"
 			fill="none"

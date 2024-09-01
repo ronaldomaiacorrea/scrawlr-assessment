@@ -4,7 +4,7 @@ import AddButton from '../common/addButton/AddButton';
 import VotesList from './VotesList';
 import { VotesContext } from '../context/VotesProvider';
 
-interface RowProps {
+export interface RowProps {
 	rowNumber: number;
 }
 
