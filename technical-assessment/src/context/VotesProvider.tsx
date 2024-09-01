@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { NUMBER_OF_ROWS } from './constants';
+import { NUMBER_OF_ROWS } from '../config/constants';
 import type { RowVotes, Vote, VotesContextType } from '../utils/types';
 
 interface VotesProviderProps {

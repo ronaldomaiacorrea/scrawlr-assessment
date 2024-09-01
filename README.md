@@ -2,7 +2,7 @@
 
 This is an assessment for job application.
 
-# Getting started
+## Getting started
 
 Follow these instructions to run the app:
 
@@ -10,8 +10,12 @@ Follow these instructions to run the app:
 git clone https://github.com/ronaldomaiacorrea/scrawlr-assessment.git
 
 cd scrawlr-assessment
-cd technical-assesment
+cd technical-assessment
 npm install
 npm run dev
 
 ```
+
+## Configuration
+
+Number of rows can be changed by modifying the constant `NUMBER_OF_ROWS` in the `src/config/constants.ts` file.
