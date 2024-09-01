@@ -1,6 +1,6 @@
 # Technical assessment
 
-This is an assessment for job application.
+This is an assessment for a job application.
 
 ## Getting started
 
