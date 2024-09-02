@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { UserConfigExport } from 'vite';
 
 export default defineConfig({
-	base: '/scrawlr-assessment/technical-assessment/',
+	base: '/technical-assessment/',
 	test: {
 		globals: true,
 		environment: 'jsdom',
