@@ -1,10 +1,11 @@
+import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import { expect, it, describe, vi } from 'vitest';
 import Row from '../src/components/Row';
 import type { RowProps } from '../src/components/Row';
 import userEvent from '@testing-library/user-event';
-import { RowVotes, VotesContextType } from '../src/utils/types';
+import type { RowVotes, VotesContextType } from '../src/utils/types';
 import { VotesContext } from '../src/context/VotesProvider';
 
 const defaultProps: RowProps = {
