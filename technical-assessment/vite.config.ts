@@ -7,4 +7,5 @@ export default defineConfig({
 		environment: 'jsdom',
 	},
 	plugins: [],
+	base: '/scrawlr-assessment/technical-assessment/',
 } as UserConfigExport);
