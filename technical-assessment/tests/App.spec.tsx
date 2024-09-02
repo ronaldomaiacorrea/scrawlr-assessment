@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
-import { it, describe, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { it, describe, vi, expect } from 'vitest';
 import App from '../src/App';
 import { VotesContext } from '../src/context/VotesProvider';
 
@@ -14,7 +14,21 @@ const renderComponent = () =>
 	);
 
 describe('<App />', () => {
-	it('should render the app component', () => {
+	it('should render 1 row with add button', () => {
 		renderComponent();
+
+		expect(screen.getByRole('button')).toBeInTheDocument();
+	});
+
+	it('should render 3 row with add button', () => {
+		render(
+			<VotesContext.Provider
+				value={{ addVote: vi.fn(), votesRows: [], numberOfRows: 3 }}
+			>
+				<App />
+			</VotesContext.Provider>
+		);
+
+		expect(screen.queryAllByRole('button')).toHaveLength(3);
 	});
 });
