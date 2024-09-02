@@ -1,6 +1,6 @@
 # Technical assessment
 
-This is an assessment for a job application.
+This is a technical assessment.
 
 ## Getting started
 
@@ -19,3 +19,11 @@ npm run dev
 ## Configuration
 
 Number of rows can be changed by modifying the constant `NUMBER_OF_ROWS` in the `src/config/constants.ts` file.
+
+## Tests
+
+All unit tests are implemented using React Testing Library. The state changes of the up-vote arrows (color changes) it is inside the `UpArrow.spec.tsx` file and it can be e tested by running the following command:
+
+```Node
+npm run test
+```

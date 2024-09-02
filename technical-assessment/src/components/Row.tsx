@@ -16,6 +16,7 @@ const Row = ({ rowNumber }: RowProps) => {
 			<VotesList
 				votes={votesRows[rowNumber]?.votes || []}
 				isSelected={votesRows[rowNumber]?.isSelected}
+				rowNumber={rowNumber}
 			/>
 			<AddButton addItem={() => addVote(rowNumber)} />
 		</div>

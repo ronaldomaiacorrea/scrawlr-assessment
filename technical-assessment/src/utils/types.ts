@@ -1,6 +1,6 @@
 export interface Vote {
 	id: number;
-	onClick: () => void;
+	// onClick: () => void;
 }
 
 export interface RowVotes {
@@ -14,4 +14,5 @@ export type VotesContextType = {
 	numberOfRows: number;
 	votesRows: RowVotes;
 	addVote: (row: number) => void;
+	updateVotes: (row: number) => void;
 };

@@ -13,9 +13,10 @@ const defaultProps: RowProps = {
 };
 
 const mockAddVote = vi.fn();
+const mockUpdateVotes = vi.fn();
 const mockVotesRows: RowVotes = {
 	0: {
-		votes: [{ id: 1, onClick: vi.fn() }],
+		votes: [{ id: 1 }],
 		isSelected: false,
 	},
 };
@@ -24,6 +25,7 @@ const mockContextValue: VotesContextType = {
 	votesRows: mockVotesRows,
 	addVote: mockAddVote,
 	numberOfRows: 1,
+	updateVotes: mockUpdateVotes,
 };
 
 const renderComponent = (props: Partial<RowProps> = {}) =>

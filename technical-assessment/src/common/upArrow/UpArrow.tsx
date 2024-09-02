@@ -2,13 +2,18 @@ import './upArrow.css';
 
 export interface UpArrowProps {
 	isSelected: boolean;
-	onSelectVote: () => void;
+	handleVoteSelection: (row: number) => void;
+	rowNumber: number;
 }
 
-const UpArrow = ({ isSelected, onSelectVote }: UpArrowProps) => {
+const UpArrow = ({
+	isSelected,
+	handleVoteSelection,
+	rowNumber,
+}: UpArrowProps) => {
 	return (
 		<svg
-			onClick={onSelectVote}
+			onClick={() => handleVoteSelection(rowNumber)}
 			width="30"
 			height="30"
 			viewBox="0 0 24 24"

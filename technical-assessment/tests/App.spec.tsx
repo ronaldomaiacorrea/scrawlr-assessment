@@ -8,7 +8,12 @@ import { VotesContext } from '../src/context/VotesProvider';
 const renderComponent = () =>
 	render(
 		<VotesContext.Provider
-			value={{ addVote: vi.fn(), votesRows: [], numberOfRows: 1 }}
+			value={{
+				addVote: vi.fn(),
+				votesRows: [],
+				numberOfRows: 1,
+				updateVotes: vi.fn(),
+			}}
 		>
 			<App />
 		</VotesContext.Provider>
@@ -24,7 +29,12 @@ describe('<App />', () => {
 	it('should render 3 row with add button', () => {
 		render(
 			<VotesContext.Provider
-				value={{ addVote: vi.fn(), votesRows: [], numberOfRows: 3 }}
+				value={{
+					addVote: vi.fn(),
+					votesRows: [],
+					numberOfRows: 3,
+					updateVotes: vi.fn(),
+				}}
 			>
 				<App />
 			</VotesContext.Provider>

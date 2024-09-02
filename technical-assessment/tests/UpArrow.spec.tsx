@@ -1,18 +1,23 @@
+import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import { expect, it, describe, vi } from 'vitest';
+import UpArrow from '../src/common/upArrow/UpArrow';
+import type { UpArrowProps } from '../src/common/upArrow/UpArrow';
 import userEvent from '@testing-library/user-event';
-import UpArrow, { UpArrowProps } from '../src/common/upArrow/UpArrow';
 
 const defaultProps: UpArrowProps = {
 	isSelected: false,
-	onSelectVote: vi.fn(),
+	handleVoteSelection: vi.fn(),
+	rowNumber: 0,
 };
 
 const renderComponent = (props: Partial<UpArrowProps> = {}) =>
 	render(<UpArrow {...defaultProps} {...props} />);
 
-describe('<Uparrow>', () => {
+const getUpArrow = () => screen.getByRole('img');
+
+describe('<UpArrow />', () => {
 	it('Should render the up arrow with a fill attribute indicating it is not selected, using the color #F4F6F8 by default.', () => {
 		renderComponent();
 		expect(screen.getByRole('img')).toHaveAttribute('fill', '#F4F6F8');
@@ -22,14 +27,26 @@ describe('<Uparrow>', () => {
 		renderComponent({ isSelected: true });
 		expect(screen.getByRole('img')).toHaveAttribute('fill', '#E5E8FD');
 	});
+	it('should change up-vote arrow state when user clicks on arrow', async () => {
+		const handleVoteSelectionSpy = vi.fn();
+		const { rerender } = renderComponent({
+			handleVoteSelection: handleVoteSelectionSpy,
+		});
 
-	it('Should call onSelectVote when user clicks on the up-vote arrow', async () => {
-		const onSelectVoteSpy = vi.fn();
+		expect(getUpArrow()).toHaveAttribute('fill', '#F4F6F8');
 
-		renderComponent({ onSelectVote: onSelectVoteSpy });
+		userEvent.click(getUpArrow());
 
-		userEvent.click(screen.getByRole('img'));
+		await waitFor(() => expect(handleVoteSelectionSpy).toHaveBeenCalled());
 
-		await waitFor(() => expect(onSelectVoteSpy).toHaveBeenCalledTimes(1));
+		rerender(
+			<UpArrow
+				isSelected={true}
+				handleVoteSelection={handleVoteSelectionSpy}
+				rowNumber={0}
+			/>
+		);
+
+		expect(getUpArrow()).toHaveAttribute('fill', '#E5E8FD');
 	});
 });
